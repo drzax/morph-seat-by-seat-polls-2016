@@ -1,3 +1,5 @@
+"use strict";
+
 // This is a template for a Node.js scraper on morph.io (https://morph.io)
 var fs = require('fs');
 var path = require('path');
