@@ -1,0 +1,37 @@
+{
+  "dependencies": {
+    "cheerio": "latest",
+    "moment": "^2.13.0",
+    "request": "latest",
+    "sqlite3": "latest"
+  },
+  "name": "morph-seat-by-seat-polls-2016",
+  "description": "Scrapes the ABC's website for Australian federal election candidates in 2016 election",
+  "version": "1.0.0",
+  "main": "scraper.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drzax/morph-seat-by-seat-polls-2016.git"
+  },
+  "keywords": [
+    "scraper",
+    "data",
+    "politics",
+    "australia",
+    "candidates"
+  ],
+  "engines": {
+    "node": "5.8.0",
+    "npm": "3.8.2"
+  },
+  "author": "Simon Elvery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drzax/morph-seat-by-seat-polls-2016/issues"
+  },
+  "homepage": "https://github.com/drzax/morph-seat-by-seat-polls-2016#readme"
+}
