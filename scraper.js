@@ -77,7 +77,7 @@ url('https://en.wikipedia.org/wiki/Opinion_polling_for_the_Australian_federal_el
 		return polls;
 	}).then((polls) => {
 		return url('https://api.morph.io/drzax/morph-australian-federal-election-electorates-2016/data.json?'+qs.stringify({
-			key: process.env.MORPHIO_KEY,
+			key: process.env.MORPH_KEY,
 			query: "SELECT * FROM data"
 		}))
 			.then(JSON.parse)
