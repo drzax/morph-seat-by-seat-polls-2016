@@ -28,7 +28,8 @@ db = new Promise((resolve, reject) => {
 					party1code TEXT,
 					party1pct TEXT,
 					party2code TEXT,
-					party2pct TEXT
+					party2pct TEXT,
+					reference TEXT
 				)`, (err) => err ? reject(err) : resolve(conn));
 	});
 });
@@ -59,6 +60,9 @@ url('https://en.wikipedia.org/wiki/Opinion_polling_for_the_Australian_federal_el
 				// Compile data for this poll
 				poll.$date = moment(row[0].replace(/^.*\–/,''), 'D MMM YYYY').toISOString();
 				poll.$electorateName = row[1].split(/ [\(\[]/)[0];
+				// poll.$reference =
+				var refId = $(this).find('tr').eq(i).find('td').eq(0).find('a').eq(1).attr('href');
+				poll.$reference = $(refId).find('.reference-text a').attr('href');
 
 				var partyCol = 2;
 				var party = 1;
@@ -93,7 +97,7 @@ url('https://en.wikipedia.org/wiki/Opinion_polling_for_the_Australian_federal_el
 	.then((polls) => {
 		db.then(function(db) {
 			polls.forEach((poll) => {
-				db.run("INSERT INTO data (electorateName, electorateCode, date, party1code, party1pct, party2code, party2pct) VALUES ($electorateName, $electorateCode, $date, $party1code, $party1pct, $party2code, $party2pct)", poll, (global.gc) ? global.gc : null);
+				db.run("INSERT INTO data (electorateName, electorateCode, date, party1code, party1pct, party2code, party2pct, reference) VALUES ($electorateName, $electorateCode, $date, $party1code, $party1pct, $party2code, $party2pct, $reference)", poll, (global.gc) ? global.gc : null);
 			});
 		}, handleErr);
 	})
