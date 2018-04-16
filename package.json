@@ -1,12 +1,16 @@
 {
   "dependencies": {
-    "cheerio": "latest",
+    "cheerio": "1.0.0-rc.2",
     "moment": "^2.13.0",
-    "request": "latest",
-    "sqlite3": "latest"
+    "request": "^2.85.0",
+    "sqlite3": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=5.0.0 < 6.0.0"
   },
   "name": "morph-seat-by-seat-polls-2016",
-  "description": "Scrapes the ABC's website for Australian federal election candidates in 2016 election",
+  "description":
+    "Scrapes the ABC's website for Australian federal election candidates in 2016 election",
   "version": "1.0.0",
   "main": "scraper.js",
   "devDependencies": {},
@@ -17,13 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/drzax/morph-seat-by-seat-polls-2016.git"
   },
-  "keywords": [
-    "scraper",
-    "data",
-    "politics",
-    "australia",
-    "candidates"
-  ],
+  "keywords": ["scraper", "data", "politics", "australia", "candidates"],
   "engines": {
     "node": "5.8.0",
     "npm": "3.8.2"
